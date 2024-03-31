@@ -1,8 +1,9 @@
 from numpy import*
 
 def bisezioni(f,a,b,tol,itmax=100):
+    
     """
-    Metodo delle successive bisezioni
+    Metodo delle successive bisezioni per la ricerca degli zeri di una funzione
 
     Parametri di input:
         f : funzione di cui ricercare uno zero alpha
