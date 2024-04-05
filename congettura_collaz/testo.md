@@ -1,7 +1,14 @@
 # Congettura di Collaz
 Sia $x_0$ un numero intero positivo. Per n = 0, 1, 2, . . . , si consideri
 la successione $\{x_n\}$ definita ricorsivamente come segue:
-$$x_{n+1} = \begin{cases} {x_n \over 2}  \qquad \text{se } x_n \text{ è pari} \\ 3x_n+1  \qquad \text{se } x_n \text{ è dispari} \end{cases}$$
+
+$$
+x_{n+1}=
+\begin{cases}
+{x_n \over 2} &  \qquad \text{se } x_n \text{ è pari} \\
+3x_n+1  & \qquad \text{se } x_n \text{ è dispari}
+\end{cases}
+$$
 
 La congettura di Collaz
 afferma che qualsiasi sia il punto iniziale $x_0$, l’algoritmo
