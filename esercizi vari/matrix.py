@@ -38,9 +38,28 @@ def trasponse_matrix(m):
             t[j,i] = m[i,j]
     return t
 
+
 """ Si scriva una funzione che abbia in input un vettore (array o lista) x le cui componenti siano interi compresi tra 0 e 9, e in
      output un ' array (o matrice) A di due colonne cosi definita:
     - la prima colonna di A riporta le cifre distinte del vettore x
     - il generico elemento della seconda colonna di A riporta il numero di volte in cui la cifra corrispondente nella prima colonna compare nel
     vettore x
+"""
+
+# matrice simmetrica : restituisce true se la matrice è simmetrica, false altrimenti
+def simmetric(m):
+    rows, columns = m.shape
+    for i in range (0,rows):
+        for j in range (0,columns):
+            if m[i][j] != m[j][i]:
+                return False
+    return True
+
+""" 
+test1 = np.array([[2,-1,5],[-1,5,7],[5,7,-1]]) # simmetric : True
+test2 = np.array([[1,-1,3],[0,5,4],[1,2,3]]) # simmetric : False
+test3 = np.array([[3,2,1],[2,4,0],[1,0,5]]) # simmetric : True
+print("test 1 : ", simmetric(test1))
+print("test 2 : ", simmetric(test2))
+print("test 3 : ", simmetric(test3))
 """
