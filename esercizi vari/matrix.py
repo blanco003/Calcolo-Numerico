@@ -63,3 +63,65 @@ print("test 1 : ", simmetric(test1))
 print("test 2 : ", simmetric(test2))
 print("test 3 : ", simmetric(test3))
 """
+
+
+"""
+verificare se la somma degli elementi di ogni riga, di ogni colonna e delle due diagonali è uguale
+"""
+
+def check_rows(m):
+    rows, colums = m.shape
+    # trovo la somma degli elementi della prima riga e la confronto con le successive somme
+    for i in range (0,rows):
+        sum_row = 0
+        for j in range(0,colums):
+            sum_row += m[i][j]
+        #print("somma della riga ",i+1," : ",sum_row)
+        if i == 0:
+            first_sum_row = sum_row
+        else :
+            if sum_row != first_sum_row:
+                #print("le somme degli elementi di ogni riga non sono uguali")
+                return False
+    return True
+
+def check_columns(m):
+    rows, colums = m.shape
+    # trovo la somma degli elementi della prima colonna e la confronto con le successive somme
+    for i in range (0,colums):
+        sum_column = 0
+        for j in range(0,rows):
+            sum_column += m[i][j]
+        if i == 0:
+            first_column_row = sum_column
+        #print("somma della colonna ",i+1," : ",sum_column)
+        else :
+            if sum_column != first_column_row:
+                #print("le somme degli elementi di ogni colonna non sono uguali")
+                return False
+    return True
+            
+# controlla se la somma degli elementi sulle due diagonali è uguale
+def check_diagonals(m):
+    rows, colums = m.shape
+    sum_first_diagonal = 0
+    sum_second_diagonal = 0
+    for i in range (0,rows):
+        for j in range(0,colums):
+            if i==j:
+                sum_first_diagonal += m[i][j]
+                sum_second_diagonal += m[j][rows-i-1]
+    #print("somma prima diagionale : ", sum_first_diagonal)
+    #print("somma seconda diagionale : ", sum_second_diagonal)
+    return sum_first_diagonal == sum_second_diagonal
+
+def check(m):
+    return check_rows(m) and check_columns(m) and check_diagonals(m)
+    
+
+test1 = np.array([[2,-1,5],[-1,5,7],[5,7,-1]]) # false
+test2 = np.array([[2,2,2],[2,2,2],[2,2,2]]) # true
+print(test1)
+print("test 1 : " ,check(test1))
+print(test2)
+print("test 2 : " ,check(test2))
