@@ -5,5 +5,5 @@ Contiene tutte le implementazioni della teoria studiata.
 - Metodo delle bisezioni
 - Metodo di Newton
 
-# Esercizi Vari
+### Esercizi Vari
 - Esercizi e traccie risolte in preparazione all'esonero/esame
