@@ -6,4 +6,4 @@ Contiene tutte le implementazioni della teoria studiata.
 - Metodo di Newton
 
 ### Esercizi Vari
-- Esercizi e traccie risolte in preparazione all'esonero/esame
+- Esercizi e tracce risolte in preparazione all'esonero/esame
