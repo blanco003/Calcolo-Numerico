@@ -10,6 +10,7 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 
 ## Sistemi Lineari
 - Algoritmo di sostituzione all'indietro per sistemi lineari triangolari superiori
+- Fattorizzazione LU
 
 ### Esercizi Vari
 - Esercizi e tracce risolte in preparazione all'esonero/esame
