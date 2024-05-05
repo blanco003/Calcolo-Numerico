@@ -11,6 +11,8 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 ## Sistemi Lineari
 - Algoritmo di sostituzione all'indietro per sistemi lineari triangolari superiori
 - Fattorizzazione LU
+- Fattorizzazione LU con tecnica del pivot
+- Fattorizzazione LU con tecnica del massimo pivot parziale
 
 ### Esercizi Vari
 - Esercizi e tracce risolte in preparazione all'esonero/esame
