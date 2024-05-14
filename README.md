@@ -1,4 +1,4 @@
-# Numerical-Analysis
+# Calcolo Numerico
 Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-L) 23/24.
 
 ## Zeri di Funzioni
@@ -13,6 +13,12 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 - Fattorizzazione LU
 - Fattorizzazione LU con tecnica del pivot
 - Fattorizzazione LU con tecnica del massimo pivot parziale
+
+## Interpolazione ed Approssimazione
+- Interpolazione con polinomio di Lagrange
+
+## Da fare
+- gauss con ricerca pivot a destra
 
 ### Esercizi Vari
 - Esercizi e tracce risolte in preparazione all'esonero/esame

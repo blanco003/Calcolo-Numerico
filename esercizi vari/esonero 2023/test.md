@@ -8,7 +8,7 @@ x=
 \end{cases}
 $$
 
-Esempio. In corisspondenza della matrice
+Esempio. In corrispondenza della matrice
 
 $$A=\begin{pmatrix}  
 -2 & -1 & 2\\  
