@@ -5,10 +5,8 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 - Metodo delle bisezioni
 - Metodo di Newton
 
-## Matrici
-- Calcolo del determinante con il metodo di Laplace
-
 ## Sistemi Lineari
+- Calcolo del determinante con il metodo di Laplace
 - Algoritmo di sostituzione all'indietro per sistemi lineari triangolari superiori
 - Fattorizzazione LU
 - Fattorizzazione LU con tecnica del pivot
@@ -19,6 +17,12 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 
 ## Da fare
 - gauss con ricerca pivot a destra
+- ridurre una matrice a scalini
+- calcolare il rango di una matrice (sfruttando la riduzione a scalini)
+- inversa di una matrice
+- autovalore dominante e autovettore corrispondente con metodo delle potenze con tecnica di normalizzazione
+- autovalore dominante e autovettore corrispondente con metodo delle potenze
+
 
 ### Esercizi Vari
 - Esercizi e tracce risolte in preparazione all'esonero/esame
