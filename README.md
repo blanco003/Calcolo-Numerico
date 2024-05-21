@@ -15,12 +15,14 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 ## Interpolazione ed Approssimazione
 - Interpolazione con polinomio di Lagrange
 
+## Autovalori e Autovettori
+- Metodo delle potenze normalizzato per il calcolo dell'autovalore dominante e il corrispondente autovettore
+
 ## Da fare
 - gauss con ricerca pivot a destra
 - ridurre una matrice a scalini
 - calcolare il rango di una matrice (sfruttando la riduzione a scalini)
 - inversa di una matrice
-- autovalore dominante e autovettore corrispondente con metodo delle potenze con tecnica di normalizzazione
 - autovalore dominante e autovettore corrispondente con metodo delle potenze
 
 
