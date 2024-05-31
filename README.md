@@ -12,6 +12,7 @@ Contiene le implementazioni della teoria studiata nel corso Calcolo Numerico (A-
 - Fattorizzazione LU con tecnica del pivot
 - Fattorizzazione LU con tecnica del massimo pivot parziale
 - Eliminazione di Gauss
+- Norma1 di una matrice
 
 ## Interpolazione ed Approssimazione
 - Interpolazione con polinomio di Lagrange
