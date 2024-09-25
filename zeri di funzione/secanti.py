@@ -1,53 +1,56 @@
 from numpy import*
 
-def newton(f,f_primo,x0,tol,it_max):
+def secanti(f,x0,x1,tol,it_max):
     
     """
-    Metodo di Newton per la ricerca degli zeri di una funzione.
+    Metodo delle secanti per la ricerca degli zeri di una funzione.
 
     INPUT:
-        - f : funzione di cui ricercare lo zero
-        - f_primo : derivata della funzione di cui ricercare lo zero
-        - x0 : stima iniziale
+        - f : funzione di cui ricercare uno zero
+        - x0,x1 : punti iniziali
         - tol : precisione richiesta
         - it_max : numero massimo di iterate consentite
     OUTPUT:
-        - x1 : approssimazione dello zero di f
+        - x2 : approssimazione dello zero di f
         - it : numero di iterate effettuate
 
    """
    
     it = 0  # contatore iterazioni
-    arresto = False  # criterio d'arresto basato sull'errore misto
+    arresto = False   # criterio d'arresto basato sull'errore relativo
 
     while (not arresto) and (it < it_max):
         
         it = it + 1
-        x1 = x0 - f(x0) / f_primo(x0)
+        x2 = x1 - ( f(x1) * ( (x1 - x0) / (f(x1) - f(x0))  ) ) 
         
-        arresto = ( abs(x0-x1) / (1+abs(x1)) < tol ) 
+        #print(f"Numero iterazione {it}, approssimazione corrente : {x2}")
         
-        # print(f"Numero iterazione {it}, approssimazione corrente : {x1}")
+        arresto = ( abs(x2-x1)/(abs(x2)) < tol )
         
+        x0 = x1
+        x1 = x2
+    
         if (it == it_max):
             print("Limite numero di iterazioni raggiunto")
         
         if (arresto):
             print("Precisione richiesta raggiunta")
-        
-        x0 = x1
-        
-    return x1,it
+              
+    return x2,it
+    
 
-def newton_successione(f,f_primo,x0,tol,it_max):
+
+
+def secanti_successione(f,x0,x1,tol,it_max):
     
     """
-    Metodo di Newton per la ricerca degli zeri di una funzione, restituisce la successione degli errori di iterazione in iterazione
+    Metodo delle secanti per la ricerca degli zeri di una funzione, restituisce la successione degli errori di iterazione in iterazione
     per mostrare la velocità della riduzione e l'avvicinamento alla precisione richiesta tramite il grafico del confronto tra metodi.
 
     INPUT:
         - f : funzione di cui ricercare uno zero
-        - x0 : stima iniziale
+        - x0,x1 : punti iniziali
         - tol : precisione richiesta
         - it_max : numero massimo di iterate consentite
     OUTPUT:
@@ -56,30 +59,30 @@ def newton_successione(f,f_primo,x0,tol,it_max):
    """
    
     it = 0  # contatore iterazioni
-    arresto = False  # criterio d'arresto basato sull'errore relativo
+    arresto = False   # criterio d'arresto basato sull'errore relativo
     
-
     xn_eps = []
-    
+
     while (not arresto) and (it < it_max):
         
         it = it + 1
-        x1 = x0 - f(x0) / f_primo(x0)
+        x2 = x1 - ( f(x1) * ( (x1 - x0) / (f(x1) - f(x0))  ) ) 
         
-        xn_eps.append(( abs(x0-x1) / abs(x1)  ) )
         
-        arresto = ( ( abs(x0-x1) / abs(x1)  ) < tol ) 
         
-        #print(f"Numero iterazione {it}, approssimazione corrente : {x1}")
+        #print(f"Numero iterazione {it}, approssimazione corrente : {x2}")
         
+        arresto = ( abs(x2-x1)/(abs(x2)) < tol )
+        xn_eps.append(abs(x2-x1)/(abs(x2)))
+        x0 = x1
+        x1 = x2
+    
         if (it == it_max):
-            print("Newton : Limite numero di iterazioni raggiunto")
+            print("Secanti : Limite numero di iterazioni raggiunto")
         
         if (arresto):
-            print("Newton : Precisione richiesta raggiunta in",it,"iterazioni")
-        
-        x0 = x1
-        
+            print("Secanti : Precisione richiesta raggiunta in",it,"iterazioni")
+              
     return xn_eps
 
 
@@ -90,14 +93,12 @@ def newton_successione(f,f_primo,x0,tol,it_max):
 def f(x):
     return x**2 -2
 
-def f_primo(x):
-    return 2*x
-
 x0 = 2
+x1 = 3
 tol = 1e-8  # Precisione richiesta
 it_max = 100  # Numero massimo di iterazioni
 
-alpha, it = newton(f,f_primo ,x0, tol, it_max)
+alpha, it = secanti(f, x0, x1, tol, it_max)
 print(f"Numero iterazioni eseguite : {it} \nApprossimazione dello zero di f : {alpha}")
 
 """

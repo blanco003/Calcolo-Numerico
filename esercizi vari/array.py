@@ -1,6 +1,6 @@
 import numpy as np
 
-# find the max and min of an array
+# trova il minimo e massimo di un array
 def min_max(array):
     min = array[0]
     max = array[0]
@@ -13,7 +13,7 @@ def min_max(array):
     print("min : ",min)
 
 
-# binary search (array has to be sorted before)
+# ricerca binaria (l'array deve essere gia ordinato)
 def binary_search(array, element): 
     left = 0
     right = len(array) - 1

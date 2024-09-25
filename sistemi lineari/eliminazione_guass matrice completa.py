@@ -49,9 +49,9 @@ def eliminazione_gauss(A,b):
         for j in range(i+1,righe_b):
             m_ik = matrice_completa[j][i] / matrice_completa[i][i]
             matrice_completa[j] = matrice_completa[j] - (m_ik * matrice_completa[i])
-            print(f" \n ------------------------------------------------\n[A{i+1}|b{i+1}]  :\n\n{matrice_completa}")
-            print("\n ------------------------------------------------")
-
+            
+        print(f" \n ------------------------------------------------\n[A{i+1}|b{i+1}]  :\n\n{matrice_completa}")
+        print("\n ------------------------------------------------")
         i = i + 1
     
 
@@ -76,11 +76,12 @@ def eliminazione_gauss(A,b):
 
 
 
-    
-A = np.array([[1,1,3],
-              [0,1,3],
-              [-1,3,0]])
 
-b = np.array([[1],[3],[5]])
+    
+A = np.array([[-1,2,-2],
+              [1,1,-1],
+              [-1,5,1]])
+
+b = np.array([[0],[6],[0]])
     
 eliminazione_gauss(A,b)
